@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
+import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
@@ -33,7 +35,7 @@ public class PersistenceConfig {
 	private Environment env;
 
 	@Primary
-	@Profile("production")
+//	@Profile("production")
 	@Bean(name = "bookDataSource")
 	public DataSource dataSourceProd() {
 		BasicDataSource dataSource = new BasicDataSource();
@@ -45,12 +47,7 @@ public class PersistenceConfig {
 		return dataSource;
 	}
 	
-	
-	@Bean(name="amitEntityManager")
-	public EntityManager getEntityManager() {
-		return entityManagerFactory().createEntityManager();
-	}
-	
+
 	
 	@Primary
 	@Bean(name = "amitFactory")

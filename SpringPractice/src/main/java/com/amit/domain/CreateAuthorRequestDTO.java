@@ -2,7 +2,7 @@ package com.amit.domain;
 
 public class CreateAuthorRequestDTO {
 	private String name;
-	private String bookId;
+	private String authorId;
 	private String description;
 	private String dateAdded;
 	
@@ -24,11 +24,10 @@ public class CreateAuthorRequestDTO {
 	public void setDateAdded(String dateAdded) {
 		this.dateAdded = dateAdded;
 	}
-	public String getBookId() {
-		return bookId;
+	public String getAuthorId() {
+		return authorId;
 	}
-	public void setBookId(String bookId) {
-		this.bookId = bookId;
+	public void setAuthorId(String authorId) {
+		this.authorId = authorId;
 	}
-
 }

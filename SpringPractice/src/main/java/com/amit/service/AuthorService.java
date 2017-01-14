@@ -4,5 +4,5 @@ import com.amit.domain.CreateAuthorRequestDTO;
 
 
 public interface AuthorService {
-   public CreateAuthorRequestDTO saveNewEntity() ;
+   public CreateAuthorRequestDTO saveNewEntity(CreateAuthorRequestDTO requestData) ;
 }

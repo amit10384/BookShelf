@@ -7,5 +7,5 @@ import com.amit.persistence.entities.Author;
 
 public interface AuthorRepository extends CrudRepository<Author,String> {
 
-  public List<Author> findByNameIgnoreCase(String bookName);
+  public List<Author> findByNameOfAuthorAllIgnoreCase(String authorName);
 }
